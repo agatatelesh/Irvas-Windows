@@ -32,6 +32,7 @@ window.addEventListener('DOMContentLoaded', function() {
             } 
     
             window.addEventListener("click", function(event) {
+                event.preventDefault();
                 if(event.target == b) {
                     b.style.display = 'none';
                     document.body.style.overflow = '';
