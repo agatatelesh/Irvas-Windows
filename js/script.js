@@ -47,6 +47,12 @@ window.addEventListener('DOMContentLoaded', function() {
 
         modalWindows(phoneLink,morePhone);
         modalWindows(headerBtn,more);
+
+        function func() {
+            morePhone.style.display= 'block';
+        }
+
+        setTimeout(func, 8000);
         
         //Form   
         let massage = {
@@ -175,6 +181,8 @@ let deadLine = '2018-11-22';
 
     }
       setClock('timer', deadLine);
+
+
         
             
 
