@@ -232,55 +232,52 @@ showBigPic(worksImg8,bigPic8);
 
 
 
-
-        
-            
-
-//tabs
-
-// let     tab = document.querySelectorAll('.glazing_block'),
-//         info = document.querySelector('.glazing_slider'),
-//         tabContent = document.querySelectorAll('.window_info');
-//         console.log(tabContent);
-//         // console.log(info);
-
-//         // tabContentCold = document.querySelectorAll('.glazing_cold'),
-//         // tabContentWarm = document.querySelectorAll('.glazing_warm');
-//         // console.log(tabContentCold);
-//         // console.log(tabContentWarm);
-//         function hideTabContent(a) {
-//             for (let i = a; i < tabContent.length; i++) {
-//                 tabContent[i].classList.remove('show');
-//                 tabContent[i].classList.add('hide');
-//             }
-//         }
-    
-//         hideTabContent(1);
-    
-//         function showTabContent(b) {
-//             if (tabContent[b].classList.contains('hide')) {
-//                 tabContent[b].classList.remove('hide');
-//                 tabContent[b].classList.add('show');
-//             }
-//         }
-    
-//         info.addEventListener('click', function(event) {
-//             let target = event.target;
-//             if(target && target.classList.contains('glazing_block')) {
-//                 for( let i = 0; i < tab.length; i++) {
-//                     if (target == tab[i]) {
-//                         hideTabContent(0);
-//                         showTabContent(i);
-//                         break;
-//                     }
-//                 }
-//             }
-//         });
+// Tабы
+let decoreSlides = document.querySelectorAll('.decoration_slider')[0],
+    slideLink = document.querySelectorAll('.no_click'),
+    slider = decoreSlides.querySelectorAll('.explan'),
+    decorContetnt = document.querySelectorAll('.content_material');
 
 
-        
-   
+    decoreSlides.addEventListener('click', function(event) {
+        let target = event.target;
+        if(target && target.classList.contains('explan')) {
+            for (let i = 0; i < slider.length; i++) {
+                if(target == slider[i]) {                
+                    hideSlideLink(0);
+                    slideLink[i].classList.add('after_click');
+                    hideDecoreContent(0);
+                    showDecoreContent(i);
+                    break;
+                }
+            } 
 
-           
+        }
+              
+    });
+
+    function hideSlideLink(a) {
+        for ( let i = a; i < slider.length; i++) {
+            slideLink[i].classList.remove('after_click');
+        }
+    }
+    hideSlideLink(1);     
+
+    function hideDecoreContent(a) {
+        for (let i = a; i < decorContetnt.length; i++) {
+            decorContetnt[i].classList.remove('show');
+            decorContetnt[i].classList.add('hide');
+        }
+    }
+
+     hideDecoreContent(1);
+
+    function showDecoreContent(b) {
+        if (decorContetnt[b].classList.contains('hide')) {
+            decorContetnt[b].classList.remove('hide');
+            decorContetnt[b].classList.add('show');
+        }
+    }                
+                   
     
 });
