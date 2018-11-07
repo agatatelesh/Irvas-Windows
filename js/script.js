@@ -48,12 +48,12 @@ window.addEventListener('DOMContentLoaded', function() {
         modalWindows(phoneLink,morePhone);
         modalWindows(headerBtn,more);
 
-        function func() {
-            morePhone.style.display= 'block';
-            document.body.style.overflow = 'hidden';
-        }
+        // function func() {
+        //     morePhone.style.display= 'block';
+        //     document.body.style.overflow = 'hidden';
+        // }
 
-        setTimeout(func, 8000);
+        // setTimeout(func, 8000);
         
         //Form   
         let massage = {
@@ -232,7 +232,7 @@ showBigPic(worksImg8,bigPic8);
 
 
 
-// Tабы
+// Tабы с отделкой 
 let decoreSlides = document.querySelectorAll('.decoration_slider')[0],
     slideLink = document.querySelectorAll('.no_click'),
     slider = decoreSlides.querySelectorAll('.explan'),
@@ -277,7 +277,54 @@ let decoreSlides = document.querySelectorAll('.decoration_slider')[0],
             decorContetnt[b].classList.remove('hide');
             decorContetnt[b].classList.add('show');
         }
-    }                
+    }    
+    
+    // Табы с окнами 
+    let glazingSlides = document.querySelectorAll('.glazing_slider')[0],
+        explanLink = glazingSlides.querySelectorAll('.explanation'),
+        windowInfo = document.querySelectorAll('.window_info');
+
+
+    glazingSlides.addEventListener('click', function(event) {
+        let target = event.target;
+        if(target && target.classList.contains('explanation')) {
+            for (let i = 0; i < explanLink.length; i++) {
+                if(target == explanLink[i]) {                
+                    hideExplanLink(0);
+                    explanLink[i].classList.add('active');
+                    hideWindowInfo(0);
+                    showWindowInfo(i);
+                    break;
+                }
+            } 
+        }
+        
+                       
+    });
+    function hideExplanLink(a) {
+        for ( let i = a; i < explanLink.length; i++) {
+            explanLink[i].classList.remove('active');
+        }
+    }
+    hideExplanLink(1);  
+
+    function hideWindowInfo(a) {
+        for (let i = a; i < windowInfo.length; i++) {
+            windowInfo[i].classList.remove('show');
+            windowInfo[i].classList.add('hide');
+        }
+    }
+
+    hideWindowInfo(1);
+
+    function showWindowInfo(b) {
+        if (windowInfo[b].classList.contains('hide')) {
+            windowInfo[b].classList.remove('hide');
+            windowInfo[b].classList.add('show');
+        }
+    }    
+
+   
                    
     
 });
