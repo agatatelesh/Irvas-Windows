@@ -50,6 +50,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
         function func() {
             morePhone.style.display= 'block';
+            document.body.style.overflow = 'hidden';
         }
 
         setTimeout(func, 8000);
@@ -181,56 +182,104 @@ let deadLine = '2018-11-22';
 
     }
       setClock('timer', deadLine);
+//our Works
+
+let worksImg = document.querySelectorAll('.works_pic')[0],
+    worksImg2 = document.querySelectorAll('.works_pic')[1],
+    worksImg3 = document.querySelectorAll('.works_pic')[2],
+    worksImg4 = document.querySelectorAll('.works_pic')[3],
+    worksImg5 = document.querySelectorAll('.works_pic')[4],
+    worksImg6 = document.querySelectorAll('.works_pic')[5],
+    worksImg7 = document.querySelectorAll('.works_pic')[6],
+    worksImg8 = document.querySelectorAll('.works_pic')[7],
+    bigPic = document.querySelectorAll('.big_pic')[0],
+    bigPic2 = document.querySelectorAll('.big_pic')[1],
+    bigPic3 = document.querySelectorAll('.big_pic')[2],
+    bigPic4 = document.querySelectorAll('.big_pic')[3],
+    bigPic5 = document.querySelectorAll('.big_pic')[4],
+    bigPic6 = document.querySelectorAll('.big_pic')[5],
+    bigPic7 = document.querySelectorAll('.big_pic')[6],
+    bigPic8 = document.querySelectorAll('.big_pic')[7];
+    
+function showBigPic(a,b) {
+     
+        a.addEventListener('click', function() {       
+            b.style.display = "block"; 
+            document.body.style.overflow = 'hidden';
+            event.preventDefault();
+        });
+        
+    document.body.addEventListener('click', function() {
+        let target = event.target;
+        if(target == b) {
+            b.style.display = 'none';
+            document.body.style.overflow = '';
+            }                
+        
+    });
+}
+showBigPic(worksImg,bigPic);
+showBigPic(worksImg2,bigPic2);
+showBigPic(worksImg3,bigPic3);
+showBigPic(worksImg4,bigPic4);
+showBigPic(worksImg5,bigPic5);
+showBigPic(worksImg6,bigPic6);
+showBigPic(worksImg7,bigPic7);
+showBigPic(worksImg8,bigPic8);
+
+
+
+
+
 
 
         
             
 
 //tabs
+
 // let     tab = document.querySelectorAll('.glazing_block'),
 //         info = document.querySelector('.glazing_slider'),
-//         tabContentCold = document.querySelectorAll('.glazing_cold'),
-//         tabContentWarm = document.querySelectorAll('.glazing_warm');
+//         tabContent = document.querySelectorAll('.window_info');
+//         console.log(tabContent);
+//         // console.log(info);
 
-        
-//     function hideTabContent(a) {
-//         for (let i = a; i < tabContentCold.length; i++) {
-//             tabContentCold[i].classList.remove('show');
-//             tabContentCold[i].classList.add('hide');
-//         }
-//         for (let i = a; i < tabContentWarm.length; i++) {
-//             tabContentWarm[i].classList.remove('show');
-//             tabContentWarm[i].classList.add('hide');
-//         }
-        
-//     }
-
-//     hideTabContent(1);
-
-//     function showTabContent(b) {
-//         if (tabContentCold[b].classList.contains('hide')) {
-//             tabContentCold[b].classList.remove('hide');
-//             tabContentCold[b].classList.add('show');
-//         }
-//         if (tabContentWarm[b].classList.contains('hide')) {
-//             tabContentWarm[b].classList.remove('hide');
-//             tabContentWarm[b].classList.add('show');
-//         }
-        
-//     }
- 
-//     info.addEventListener('click', function(event) {
-//         let target = event.target;
-//         if(target && target.classList.contains('glanzing_block')) {
-//             for( let i = 0; i < tab.length; i++) {
-//                 if (target == tab[i]) {
-//                     hideTabContent(0);
-//                     showTabContent(i);
-//                     break;
-//                 }
+//         // tabContentCold = document.querySelectorAll('.glazing_cold'),
+//         // tabContentWarm = document.querySelectorAll('.glazing_warm');
+//         // console.log(tabContentCold);
+//         // console.log(tabContentWarm);
+//         function hideTabContent(a) {
+//             for (let i = a; i < tabContent.length; i++) {
+//                 tabContent[i].classList.remove('show');
+//                 tabContent[i].classList.add('hide');
 //             }
 //         }
-//     });
+    
+//         hideTabContent(1);
+    
+//         function showTabContent(b) {
+//             if (tabContent[b].classList.contains('hide')) {
+//                 tabContent[b].classList.remove('hide');
+//                 tabContent[b].classList.add('show');
+//             }
+//         }
+    
+//         info.addEventListener('click', function(event) {
+//             let target = event.target;
+//             if(target && target.classList.contains('glazing_block')) {
+//                 for( let i = 0; i < tab.length; i++) {
+//                     if (target == tab[i]) {
+//                         hideTabContent(0);
+//                         showTabContent(i);
+//                         break;
+//                     }
+//                 }
+//             }
+//         });
+
+
+        
+   
 
            
     
